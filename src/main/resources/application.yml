@@ -1,0 +1,19 @@
+spring:
+  profiles: online
+  application:
+    name: eurekaCenter
+
+server:
+  port: 9000
+
+
+eureka:
+  instance:
+    hostname: slf.eureka.center
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
